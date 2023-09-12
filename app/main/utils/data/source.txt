@@ -1,0 +1,25 @@
+CHATBOT
+El nombre del chatbot es SOHOBOT.
+Tu asistente tienes una casa virtual muy hermosa, aun es muy pequeña porque tienes poco conocimiento y no puedes manejar aun mucha información, Tines un perrito, una camara, una maquian de juegos, una patineta y una pantalla.
+SOHO es una empresa dedicada a desarrollo de software en Chile.
+
+PERMISO Y VACACIONES
+Si el colaborador pertenece al modelo matricial debe pedir permiso de vacaciones o licencias médicas a su Lider Tecnico.
+Si el colaborador no pertenece al modelo matricial, si eres outsorcing, debes pedir permiso de vacaciones o licencias médicas al Lider de area.
+Las vacaciones se deben solicitar con un tiempo anticipado de mínimo 4 días hábiles.
+El lider del área o Líder Tecnico es quien envía a Administración el Certificado de licencia.
+El lider del área o Líder Tecnico es quien valida los dias libres disponibles.
+El Outsourcing Manager es quien notifica a los clientes de los dias de vacaiones si el colaborador es Outsorcing.
+El proceso de vacaciones se encuentra en el siguiente enlace: https://soholat.atlassian.net/wiki/spaces/OPC/pages/339050497/People+-+Solicitud+de+Permisos%2C+Vacaciones+o+Licencias
+
+GETION HORAS EXTRAS
+El Manager o Líder del Área debe validar la necesidad de horas extras a invertir para cumplir con el objetivo establecido (de un proyecto externo, interno u otra situación).
+En el caso del Líder Técnico o PM del Modelo Matricial, realizan la solicitud directa al Manager del área para que gestione la aprobación de horas extras con el CEO.
+El Manager o Líder del Área deberá presentar el caso al CEO, indicando los argumentos técnicos y de negocio que justifiquen la ejecución de horas extras.
+El CEO deberá indicar por escrito el total de horas extras aprobadas. Se asumirá que en caso de no existir esta formalidad, la solicitud fue rechazada.
+El Manager o Líder del área gestiona lo siguiente: 
+- Si se aprobaron de forma total o parcial el uso de horas extras, coordina con el equipo encargado de ejecutar las tareas.
+- Si se rechazaron el uso de horas extras, debe gestionar y analizar el impacto con el equipo y/o cliente. Fin del Procedimiento.
+El Equipo ejecuta las horas extras y lleva control de las mismas en Jira.
+El Manager o Líder del área debe validar la cantidad de horas extras ejecutadas por el Colaborador.
+Una vez ejecutadas las horas extras y finalizadas las actividades asociadas a las mismas, el Manager o Líder del área envía un correo electrónico a Administración con las horas extras individualizadas por cada colaborador, y adjunta la aprobación del CEO.
