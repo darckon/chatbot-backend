@@ -24,9 +24,6 @@ def create_app():
     app = Flask(__name__)
     CORS(app, resources={r"/*": {"origins": "*"}})
     app.config.from_pyfile('config.py')
-    with app.app_context():
-        psql.get_db_connection()
-
     route_app()
 
     return app

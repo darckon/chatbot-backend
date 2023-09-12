@@ -6,6 +6,17 @@
 ## FLASK_APP=manage.py
 ### :No modificar
 
+# Dependencias
+# pip install -r requirements.txt
+
+
+# Inicialización
+## comando: python manage.py run o flask run
+
+
+
+
+
 
 
 
