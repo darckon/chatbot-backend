@@ -80,11 +80,7 @@ class AssistantService:
 
         try:
             logging.info(f"in -> service_prompt({str(data)})")
-
-            os.environ["OPENAI_API_KEY"] = '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'
-            # Enable to save to disk & reuse the model (for repeated queries on the same data)
             PERSIST = False
-
             query = None
 
             if PERSIST and os.path.exists("persist"):
@@ -128,7 +124,6 @@ class AssistantService:
         logging.info(f"in -> service_prompt({str(data)})")
         try:
             logging.info(f"in -> service_prompt({str(data)})")
-            os.environ["OPENAI_API_KEY"] = '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'
             llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo-16k')
             #db = SQLDatabase.from_uri("postgresql://192.168.1.82:5432/humantech_26072023")
             db = SQLDatabase.from_uri("sqlite:////Users/cristianrojas/Proyectos/Proyectos/iFlab/asistente-ms/app/main/infra/sqllite/humantech.db")
