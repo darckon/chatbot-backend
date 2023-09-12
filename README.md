@@ -4,6 +4,8 @@
 # Variables de entorno
 ## FLASK_ENV=development
 ## FLASK_APP=manage.py
-### :Esto no debe modificarce
+### :No modificar
+
+
 
 
