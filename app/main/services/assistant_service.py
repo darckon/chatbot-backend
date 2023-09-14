@@ -13,7 +13,6 @@ from langchain.indexes import VectorstoreIndexCreator
 from langchain.indexes.vectorstore import VectorStoreIndexWrapper
 from langchain.llms import OpenAI
 from langchain.vectorstores import Chroma
-from langchain import SQLDatabaseChain
 from langchain.chat_models import ChatOpenAI
 from langchain.sql_database import SQLDatabase
 from langchain.prompts.prompt import PromptTemplate
@@ -119,50 +118,3 @@ class AssistantService:
             logging.exception(e)
             return ControlResponse().internal_error()
     
-
-    def prompt_bd(self, data):
-        logging.info(f"in -> service_prompt({str(data)})")
-        try:
-            logging.info(f"in -> service_prompt({str(data)})")
-            llm = ChatOpenAI(temperature=0, model_name='gpt-3.5-turbo-16k')
-            #db = SQLDatabase.from_uri("postgresql://192.168.1.82:5432/humantech_26072023")
-            db = SQLDatabase.from_uri("sqlite:////Users/cristianrojas/Proyectos/Proyectos/iFlab/asistente-ms/app/main/infra/sqllite/humantech.db")
-            #print(cadena)
-            #response = AssistantService.prompt(data)
-            #cur.execute('SELECT * FROM core_employee;')
-            #employee = cur.fetchall()
-
-            # 5. Formato personalizado de respuesta
-            # ojo: recordar mandar el texto siempre en minusculas
-            formato = """
-            Dada una pregunta del usuario:
-            1. crea una consulta de sqlite, no pongas un limit
-            2  La tabla employee tiene todo lo relacionado al empleado o colaborador.
-            3. las busquedas por 'name' y 'last_name' recuerda hacerla siempre con like con '%'
-            4. esta es informacion de la base de datos para que la tengas en consideracion, la tabla core_employee_technology, es la que tiene la relacion de empleados y tecnologias
-            5. revisa los resultados
-            6. traducir al español
-            8. devuelve el dato
-            #{question}
-            """
-            cadena = SQLDatabaseChain.from_llm(llm, db,  verbose=True, top_k=30)
-            consulta = formato.format(question = data.lower())
-            resultado = cadena.run(consulta)
-            print('resultado')
-            print(resultado)
-           
-            return resultado
-        
-        except Exception as e:
-            print(e)
-            try:
-                print('except 2')
-                resultado = self.prompt_file(data)
-                return ControlResponse().success_data(
-                {'message': resultado})
-            except Exception as e2:
-                print(e2)
-                print('except 3')
-                #logging.exception(e)
-                return ControlResponse().internal_error()
-            
