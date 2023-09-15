@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Define el comando para ejecutar la aplicación cuando se inicie el contenedor
-CMD ["python", "manage.py"]
+CMD ["python", "manage.py", "run"]
