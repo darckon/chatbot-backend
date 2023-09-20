@@ -87,8 +87,8 @@ class AssistantService:
                 vectorstore = Chroma(persist_directory="persist", embedding_function=OpenAIEmbeddings())
                 index = VectorStoreIndexWrapper(vectorstore=vectorstore)
             else:
-                #loader = TextLoader("app/main/utils/data/source.txt") # Use this line if you only need data.txt
-                loader = DirectoryLoader(".", glob="app/main/utils/data/*.txt")
+                loader = TextLoader("app/main/utils/data/source.txt") # Use this line if you only need data.txt
+                #loader = DirectoryLoader(".", glob="app/main/utils/data/*.txt")
             if PERSIST:
                 index = VectorstoreIndexCreator(vectorstore_kwargs={"persist_directory":"persist"}).from_loaders([loader])
             else:
