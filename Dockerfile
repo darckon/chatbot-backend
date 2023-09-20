@@ -14,7 +14,7 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # Expone el puerto en el que se ejecutará la aplicación (ajusta según tu aplicación)
-EXPOSE 5000
+EXPOSE 5001
 
 # Define el comando para ejecutar la aplicación cuando se inicie el contenedor
-CMD ["python", "manage.py", "run"]
+CMD ["flask", "run", "--host=0.0.0.0"]
