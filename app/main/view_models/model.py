@@ -8,6 +8,7 @@ class CreateSchema(Schema):
     module = fields.Str(required=True)
     available = fields.Bool(required=True)
 
+
 class PromptSchema(Schema):
     prompt = fields.Str(required=True)
     chat_history = fields.Dict(required=False)

@@ -28,6 +28,7 @@ def create_app():
 
     return app
 
+
 class PrefixMiddleware(object):
 
     def __init__(self, app, prefix=''):

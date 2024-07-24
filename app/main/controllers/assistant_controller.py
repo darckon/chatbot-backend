@@ -1,8 +1,6 @@
 from app.main.services.assistant_service import AssistantService
 from app.main.utils.constants_messages import ERROR_MESSAGE
-from app.main.view_models.model import CreateSchema, PromptSchema
-from app.main.infra.dbm import PSQLConnection
-
+from app.main.view_models.model import CreateSchema
 from .i_controller import IController
 from ..utils.dto import MSAssistant
 from flask import request
@@ -11,9 +9,9 @@ import logging, json
 ms_assistant = MSAssistant.api
 
 
-# create
 @ms_assistant.route("/create")
 class CreateController(IController):
+
     @ms_assistant.doc("create json form")
     def post(self):
         logging.info(f"in -> {request.url}")
@@ -76,6 +74,7 @@ class FindformController(IController):
                 {'message': ERROR_MESSAGE['UNEXPECTED_ERROR']},
                 status_code=400)
 
+
 # prompt
 @ms_assistant.route("/prompt")
 class PromptController(IController):
@@ -85,7 +84,7 @@ class PromptController(IController):
             logging.info(f"in -> {request.url}")
             content = json.loads(request.data)
             print('content', content)
-            
+
             response = AssistantService().prompt_file(content['promptGpt'])
             logging.info(response)
             logging.info(f"out -> {request.url} -> {str(response['message'])}")
